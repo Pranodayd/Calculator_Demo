@@ -1,12 +1,17 @@
-#  Count the vowels in a string and return the count
+# Count the vowels in a string and return the count
+
 def count_vowels_in_text(s):
     vowels = 'aeiouAEIOU'
     count = 0
+
     for char in s:
         if char in vowels:
             count += 1
+
     return count
-#Create tests for empty string, uppercase letters, and strings with no vowels.
+
+
+# Create tests for empty string, uppercase letters, and strings with no vowels.
 def test_count_vowels():
     assert count_vowels_in_text("") == 0, "Test failed for empty string"
     assert count_vowels_in_text("AEIOU") == 5, "Test failed for uppercase letters"
