@@ -46,3 +46,15 @@ class TestCalculatorModule:
         calc = Claculator()
         with pytest.raises(ValueError, match="Cannot find the largest number in an empty list"):
             calc.max_value([])
+
+    def test_get_discount_by_customer_type(self):
+        calc = Claculator()
+        assert calc.get_discount(100, "gold") == 20
+        assert calc.get_discount(100, "silver") == 10
+        assert calc.get_discount(100, "regular") == 0
+
+    def test_final_price_by_customer_type(self):
+        calc = Claculator()
+        assert calc.final_price(100, "gold") == 80
+        assert calc.final_price(100, "silver") == 90
+        assert calc.final_price(100, "regular") == 100

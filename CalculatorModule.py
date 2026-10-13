@@ -35,10 +35,10 @@ class Claculator:
 
     def get_discount(self, price, customer_type):
         if customer_type == "gold":
-            return price * 0.8
+            return price * 0.2
         if customer_type == "silver":
-            return price * 0.9
-        return price
+            return price * 0.1
+        return 0
     def final_price(self, price, customer_type):
         return price - self.get_discount(price, customer_type)
 
